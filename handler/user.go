@@ -86,10 +86,6 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 		"exp": 		time.Now().Add(time.Hour * 24).Unix(),
 	})
 
-	fmt.Printf(user.Username)
-	fmt.Printf(user.Password)
-	fmt.Printf(token.Raw)
-	fmt.Println(string(signingKey))
 	tokenString, err := token.SignedString(signingKey)
 	if err != nil {
 		http.Error(w, "Failed to generate token", http.StatusInternalServerError)
