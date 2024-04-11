@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Signup",
+			"name": "Resident Signup",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -35,7 +35,63 @@
 			"response": []
 		},
 		{
-			"name": "Signin",
+			"name": "Manager Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"bob\",\n    \"password\": \"secret\",\n    \"role\": \"manager\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Third Party Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"chase\",\n    \"password\": \"secret\",\n    \"role\": \"third_party\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resident Signin",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -70,7 +126,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI3NzkwMjQsInVzZXJuYW1lIjoiYW15In0.G7vjN3HP2dmU7yTI3ltNsEsEX6yx-OdObDoW6-oNXwM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
 							"type": "string"
 						}
 					]
@@ -86,6 +142,286 @@
 					"port": "8080",
 					"path": [
 						"time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Discussion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topic\": \"this is a discussion from amy\",\n    \"content\": \"this is a content from amy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/discussion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"discussion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Discussions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/alldiscussions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alldiscussions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Discussions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mydiscussions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mydiscussions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Discussion Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/discussion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"discussion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Reply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"discussion_id\": 1,\n    \"content\": \"this is a reply from amy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reply",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Replies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/myreplies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"myreplies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Reply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reply",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Discussion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/discussion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"discussion"
 					]
 				}
 			},

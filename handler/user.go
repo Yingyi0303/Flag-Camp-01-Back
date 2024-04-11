@@ -35,6 +35,10 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid password", http.StatusBadRequest)
 		return
 	}
+	if user.Role != "resident" && user.Role != "manager" && user.Role != "third_party" {
+		http.Error(w, "Invalid username", http.StatusBadRequest)
+		return
+	}
 
 	// process request
 	success, err := service.AddUser(&user)
@@ -50,7 +54,7 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	
 	w.WriteHeader(http.StatusOK)
-	fmt.Printf("Handler signup up user: %s.\n", user.Username)
+	fmt.Printf("Handler signup up user: %s\n", user.Username)
 }
 
 func signinHandler(w http.ResponseWriter, r *http.Request) {

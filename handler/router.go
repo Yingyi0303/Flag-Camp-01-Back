@@ -23,11 +23,21 @@ func InitRouter() http.Handler {
 
 	router := mux.NewRouter()
 
-	router.Handle("/time", middleware.Handler(http.HandlerFunc(timeHandler))).Methods("GET")
-
 	router.Handle("/signup", http.HandlerFunc(signupHandler)).Methods("POST")
 	router.Handle("/signin", http.HandlerFunc(signinHandler)).Methods("POST")
 
+	router.Handle("/time", middleware.Handler(http.HandlerFunc(timeHandler))).Methods("GET")
+
+	router.Handle("/discussion", middleware.Handler(http.HandlerFunc(postDiscussionHandler))).Methods("POST")
+	router.Handle("/alldiscussions", middleware.Handler(http.HandlerFunc(getAllDiscussionsHandler))).Methods("GET")
+	router.Handle("/mydiscussions", middleware.Handler(http.HandlerFunc(getMyDiscussionsHandler))).Methods("GET")
+	router.Handle("/discussion", middleware.Handler(http.HandlerFunc(getDiscussionDetailHandler))).Methods("GET")
+	router.Handle("/discussion", middleware.Handler(http.HandlerFunc(deleteDiscussionHandler))).Methods("DELETE")
+
+	router.Handle("/reply", middleware.Handler(http.HandlerFunc(postReplyHandler))).Methods("POST")
+	router.Handle("/myreplies", middleware.Handler(http.HandlerFunc(getMyRepliesHandler))).Methods("GET")
+	router.Handle("/reply", middleware.Handler(http.HandlerFunc(deleteReplyHandler))).Methods("DELETE")
+	
 	originsOk := handlers.AllowedOrigins([]string{"*"})
 	headersOk := handlers.AllowedHeaders([]string{"Authorization", "Content-Type"})
 	methodsOk := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"})
