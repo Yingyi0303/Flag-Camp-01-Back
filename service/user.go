@@ -64,7 +64,7 @@ func ValidateResidentialUser(username string) (bool, error) {
 		return false, err
 	}
 
-	fmt.Printf("Service chekced residential: %s\n", username)
+	fmt.Printf("Service checked residential: %s\n", username)
 	if role == "manager" || role == "resident" {
 		return true, nil
 	} else {
