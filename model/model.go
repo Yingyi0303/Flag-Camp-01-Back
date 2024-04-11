@@ -25,5 +25,5 @@ type Reply struct {
 
 type DiscussionDto struct {
 	Discussion Discussion	`json:"discussion"`
-	Replies *[]Reply	`json:"replies,omitempty"`
+	Replies []Reply	`json:"replies"`
 }

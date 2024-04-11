@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 
 	_ "github.com/lib/pq"
 )
@@ -23,25 +22,15 @@ func Init() {
 	db, err := sql.Open("postgres", connectionString)
 	if err != nil {
 		log.Fatal(err)
-		return
 	}
-
 	fmt.Println("Connected to database successfully")
 
 	// initialize tables
-	script, _ := os.ReadFile("init.sql")
-	statements := strings.Split(string(script), ";")
-	for _, statement := range statements {
-		query := strings.TrimSpace(statement)
-		if query != "" {
-			_, err = db.Exec(query)
-			if err != nil {
-				log.Fatal(err)
-				return
-			}
-		}
+	file, _ := os.ReadFile("init.sql")
+	_, err = db.Exec(string(file))
+	if err != nil {
+		log.Fatal(err)
 	}
-
 	fmt.Println("Initialzed tables successfully")
 
 	PGBackend = &PostgresBackend{db: db}

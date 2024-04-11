@@ -92,13 +92,9 @@ func getAllDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	jsonResponse, _ := json.Marshal(result)
 	w.WriteHeader(http.StatusOK)
-	if len(result) == 0 {
-		w.Write([]byte("[]"))
-	} else {
-		jsonResponse, _ := json.Marshal(result)
-		w.Write(jsonResponse)
-	}
+	w.Write(jsonResponse)
 	fmt.Printf("Handler get all discusions\n")
 }
 
@@ -132,13 +128,9 @@ func getMyDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	jsonResponse, _ := json.Marshal(result)
 	w.WriteHeader(http.StatusOK)
-	if len(result) == 0 {
-		w.Write([]byte("[]"))
-	} else {
-		jsonResponse, _ := json.Marshal(result)
-		w.Write(jsonResponse)
-	}
+	w.Write(jsonResponse)
 	fmt.Printf("Handler get my discusions\n")
 }
 

@@ -37,7 +37,7 @@ func (backend *PostgresBackend) SelectAllDiscussions() ([]model.Discussion, erro
         return nil, err
     }
 	
-	var discussions []model.Discussion
+	discussions := []model.Discussion{}
 	for rows.Next() {
 		var discussion model.Discussion
 		err := rows.Scan(&discussion.Id,
@@ -67,7 +67,7 @@ func (backend *PostgresBackend) SelectAllDiscussionsByUsername(username string) 
         return nil, err
     }
 	
-	var discussions []model.Discussion
+	discussions := []model.Discussion{}
 	for rows.Next() {
 		var discussion model.Discussion
 		err := rows.Scan(&discussion.Id,

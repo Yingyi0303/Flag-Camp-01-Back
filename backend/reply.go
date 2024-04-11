@@ -35,13 +35,14 @@ func (backend *PostgresBackend) InsertReply(discussionId int, username, content 
 	return backend.SelectReplyById(int(id))
 }
 
-func (backend *PostgresBackend) SelectRepliesByDiscussionId(id int) (*[]model.Reply, error) {
+func (backend *PostgresBackend) SelectRepliesByDiscussionId(id int) ([]model.Reply, error) {
 	rows, err := backend.db.Query("SELECT id, username, discussion_id, content, TO_CHAR(reply_time, 'YYYY-MM-DD HH24:MI:SS') from replies WHERE discussion_id = $1 ORDER BY reply_time DESC", id)
 	if err != nil {
 		log.Println(err)
         return nil, err
     }
-	var replies []model.Reply
+
+	replies := []model.Reply{}
 	for rows.Next() {
 		var reply model.Reply
 		err := rows.Scan(&reply.Id,
@@ -59,7 +60,7 @@ func (backend *PostgresBackend) SelectRepliesByDiscussionId(id int) (*[]model.Re
 		log.Println(err)
 		return nil, err
 	}
-	return &replies, nil
+	return replies, nil
 }
 
 func (backend *PostgresBackend) SelectAllRepliesByUsername(username string) ([]model.Reply, error) {
@@ -70,7 +71,7 @@ func (backend *PostgresBackend) SelectAllRepliesByUsername(username string) ([]m
         return nil, err
     }
 	
-	var replies []model.Reply
+	replies := []model.Reply{}
 	for rows.Next() {
 		var reply model.Reply
 		err := rows.Scan(&reply.Id,
@@ -88,7 +89,6 @@ func (backend *PostgresBackend) SelectAllRepliesByUsername(username string) ([]m
 		log.Println(err)
 		return nil, err
 	}
-
 	return replies, nil
 }
 
