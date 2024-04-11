@@ -8,7 +8,7 @@ import (
 )
 
 func AddDiscussion(discussion *model.Discussion) (*model.Discussion, error) {
-	discussion, err := backend.PGBackend.InsertDiscussion(discussion.Username, discussion.Topic, discussion.Content)
+	discussion, err := backend.PGBackend.InsertDiscussion(discussion.Username, discussion.Subject, discussion.Content)
 	if err != nil {
 		log.Println(err)
 		return nil, err

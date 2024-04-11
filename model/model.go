@@ -10,7 +10,7 @@ type User struct {
 type Discussion struct {
 	Id int	`json:"id"`
 	Username string	`json:"username"`
-	Topic string	`json:"topic"`
+	Subject string	`json:"subject"`
 	Content string	`json:"content"`
 	LastUpdateTime string	`json:"last_update_time"`
 }
@@ -26,4 +26,14 @@ type Reply struct {
 type DiscussionDto struct {
 	Discussion Discussion	`json:"discussion"`
 	Replies []Reply	`json:"replies"`
+}
+
+type Maintenance struct {
+	Id int	`json:"id"`
+	Username string	`json:"username"`
+	Subject string	`json:"subject"`
+	Content string	`json:"content"`
+	Reply string	`json:"reply"`
+	Completed bool	`json:"completed"`
+	LastUpdateTime string	`json:"last_update_time"`
 }

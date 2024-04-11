@@ -41,6 +41,7 @@ func (backend *PostgresBackend) SelectRepliesByDiscussionId(id int) ([]model.Rep
 		log.Println(err)
         return nil, err
     }
+	defer rows.Close()
 
 	replies := []model.Reply{}
 	for rows.Next() {
@@ -70,6 +71,7 @@ func (backend *PostgresBackend) SelectAllRepliesByUsername(username string) ([]m
 		log.Println(err)
         return nil, err
     }
+	defer rows.Close()
 	
 	replies := []model.Reply{}
 	for rows.Next() {

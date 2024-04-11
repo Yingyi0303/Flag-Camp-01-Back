@@ -18,7 +18,7 @@ CREATE TABLE users (
 CREATE TABLE discussions (
     id SERIAL PRIMARY KEY NOT NULL,
     username TEXT REFERENCES users(username) ON DELETE CASCADE,
-    topic TEXT NOT NULL,
+    subject TEXT NOT NULL,
     content TEXT NOT NULL,
     last_update_time TIMESTAMP NOT NULL
 );
@@ -32,9 +32,9 @@ CREATE TABLE replies (
 CREATE TABLE maintenances (
     id SERIAL PRIMARY KEY NOT NULL,
     username TEXT REFERENCES users(username) ON DELETE CASCADE,
-    title TEXT NOT NULL,
+    subject TEXT NOT NULL,
     content TEXT NOT NULL,
-    remark TEXT,
+    reply TEXT DEFAULT '',
     completed BOOLEAN DEFAULT FALSE,
     last_update_time TIMESTAMP NOT NULL
 );
@@ -42,14 +42,14 @@ CREATE TABLE bills (
     id SERIAL PRIMARY KEY NOT NULL,
     username TEXT REFERENCES users(username) ON DELETE CASCADE,
     maintenance_id INTEGER REFERENCES maintenances(id) ON DELETE CASCADE,
-    remark TEXT NOT NULL,
+    item TEXT NOT NULL,
     amount INTEGER NOT NULL,
     bill_time TIMESTAMP NOT NULL
 );
 CREATE TABLE payments (
     id SERIAL PRIMARY KEY NOT NULL,
     username TEXT REFERENCES users(username) ON DELETE CASCADE,
-    remark TEXT NOT NULL,
+    item TEXT NOT NULL,
     amount INTEGER NOT NULL,
     payment_time TIMESTAMP NOT NULL
 );

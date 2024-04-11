@@ -54,7 +54,7 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	
 	w.WriteHeader(http.StatusOK)
-	fmt.Printf("Handler signup up user: %s\n", user.Username)
+	fmt.Printf("Handler sign up user: %s\n", user.Username)
 }
 
 func signinHandler(w http.ResponseWriter, r *http.Request) {
@@ -99,4 +99,5 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 
 	// construct response
 	w.Write([]byte(tokenString))
+	fmt.Printf("Handler sign in user: %s\n", user.Username)
 }

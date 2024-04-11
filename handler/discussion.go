@@ -40,8 +40,8 @@ func postDiscussionHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("User unauthorized %v\n", err)
 		return
 	}
-	if discussion.Topic == "" {
-		http.Error(w, "Invalid topic", http.StatusBadRequest)
+	if discussion.Subject == "" {
+		http.Error(w, "Invalid subject", http.StatusBadRequest)
 		return
 	}
 	if discussion.Content == "" {
@@ -59,7 +59,7 @@ func postDiscussionHandler(w http.ResponseWriter, r *http.Request) {
 	jsonResponse, _ := json.Marshal(result)
 	w.WriteHeader(http.StatusOK)
 	w.Write(jsonResponse)
-	fmt.Printf("Handler add discussion: %d\n", result.Id)
+	fmt.Printf("Handler post discussion: %d\n", result.Id)
 }
 
 func getAllDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
@@ -95,7 +95,7 @@ func getAllDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 	jsonResponse, _ := json.Marshal(result)
 	w.WriteHeader(http.StatusOK)
 	w.Write(jsonResponse)
-	fmt.Printf("Handler get all discusions\n")
+	fmt.Printf("Handler get all discussions\n")
 }
 
 func getMyDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
@@ -131,7 +131,7 @@ func getMyDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 	jsonResponse, _ := json.Marshal(result)
 	w.WriteHeader(http.StatusOK)
 	w.Write(jsonResponse)
-	fmt.Printf("Handler get my discusions\n")
+	fmt.Printf("Handler get my discussions\n")
 }
 
 func getDiscussionDetailHandler(w http.ResponseWriter, r *http.Request) {
@@ -221,5 +221,5 @@ func deleteDiscussionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	fmt.Printf("Handler delete discussion : %d\n", discussion.Id)
+	fmt.Printf("Handler delete discussion: %d\n", discussion.Id)
 }

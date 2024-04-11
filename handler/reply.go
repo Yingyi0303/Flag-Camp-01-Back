@@ -58,7 +58,7 @@ func postReplyHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		jsonResponse, _ := json.Marshal(result)
 		w.Write(jsonResponse)
-		fmt.Printf("Handler add reply: %d\n", reply.DiscussionId)
+		fmt.Printf("Handler post reply: %d\n", reply.DiscussionId)
 	}
 }
 
@@ -141,5 +141,5 @@ func deleteReplyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	fmt.Printf("Handler delete reply : %d\n", reply.Id)
+	fmt.Printf("Handler delete reply: %d\n", reply.Id)
 }

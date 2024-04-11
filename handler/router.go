@@ -37,6 +37,11 @@ func InitRouter() http.Handler {
 	router.Handle("/reply", middleware.Handler(http.HandlerFunc(postReplyHandler))).Methods("POST")
 	router.Handle("/myreplies", middleware.Handler(http.HandlerFunc(getMyRepliesHandler))).Methods("GET")
 	router.Handle("/reply", middleware.Handler(http.HandlerFunc(deleteReplyHandler))).Methods("DELETE")
+
+	router.Handle("/maintenance", middleware.Handler(http.HandlerFunc(postMaintenanceHandler))).Methods("POST")
+	router.Handle("/allmaintenances", middleware.Handler(http.HandlerFunc(getAllMaintenancesHandler))).Methods("GET")
+	router.Handle("/mymaintenances", middleware.Handler(http.HandlerFunc(getMyMaintenancesHandler))).Methods("GET")
+	router.Handle("/maintenance", middleware.Handler(http.HandlerFunc(putMaintenanceHandler))).Methods("PUT")
 	
 	originsOk := handlers.AllowedOrigins([]string{"*"})
 	headersOk := handlers.AllowedHeaders([]string{"Authorization", "Content-Type"})
