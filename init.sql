@@ -58,7 +58,17 @@ CREATE TABLE balances (
     username TEXT REFERENCES users(username) ON DELETE CASCADE,
     amount INTEGER DEFAULT 0
 );
-CREATE OR REPLACE FUNCTION update_bill()
+CREATE OR REPLACE FUNCTION insert_user()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        INSERT INTO balances(username, amount) VALUES (NEW.username, 0);
+    END IF;
+    RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+CREATE TRIGGER insert_user_trigger AFTER INSERT ON users FOR EACH ROW EXECUTE FUNCTION insert_user();
+CREATE OR REPLACE FUNCTION insert_bill()
 RETURNS TRIGGER AS $$
 BEGIN
     IF TG_OP = 'INSERT' THEN
@@ -67,8 +77,8 @@ BEGIN
     RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
-CREATE TRIGGER update_bill_trigger AFTER INSERT ON bills FOR EACH ROW EXECUTE FUNCTION update_bill();
-CREATE OR REPLACE FUNCTION update_payment()
+CREATE TRIGGER insert_bill_trigger AFTER INSERT ON bills FOR EACH ROW EXECUTE FUNCTION insert_bill();
+CREATE OR REPLACE FUNCTION insert_payment()
 RETURNS TRIGGER AS $$
 BEGIN
     IF TG_OP = 'INSERT' THEN
@@ -77,4 +87,4 @@ BEGIN
     RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
-CREATE TRIGGER update_payment_trigger AFTER INSERT ON payments FOR EACH ROW EXECUTE FUNCTION update_payment();
+CREATE TRIGGER insert_payment_trigger AFTER INSERT ON payments FOR EACH ROW EXECUTE FUNCTION insert_payment();

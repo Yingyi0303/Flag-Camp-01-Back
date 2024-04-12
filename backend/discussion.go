@@ -15,19 +15,25 @@ func (backend *PostgresBackend) InsertDiscussion(username, subject, content stri
 	currentTime := time.Now()
 	formattedTime := currentTime.Format("2006-01-02 15:04:05")
 
-	var id int
+	var id int64
 	err := tx.QueryRow(query, username, subject, content, formattedTime).Scan(&id)
 	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
-
+	
 	if err := tx.Commit(); err != nil {
 		log.Println(err)
 		return nil, err
 	}
 
-	return backend.SelectDiscussionById(int(id))
+	result, err := backend.SelectDiscussionById(int(id))
+	if err != nil {
+		log.Println(err)
+		return nil, err
+	}
+
+	return result, nil
 }
 
 func (backend *PostgresBackend) SelectAllDiscussions() ([]model.Discussion, error) {

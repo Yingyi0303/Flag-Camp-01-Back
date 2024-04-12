@@ -37,3 +37,26 @@ type Maintenance struct {
 	Completed bool	`json:"completed"`
 	LastUpdateTime string	`json:"last_update_time"`
 }
+
+type Bill struct {
+	Id int	`json:"id"`
+	Username string	`json:"username"`
+	MaintenanceId int	`json:"maintenance_id"`
+	Item string	`json:"item"`
+	Amount int	`json:"amount"`
+	BillTime string	`json:"bill_time"`
+}
+
+type Payment struct {
+	Id int	`json:"id"`
+	Username string	`json:"username"`
+	Item string	`json:"item"`
+	Amount int	`json:"amount"`
+	PaymentTime string	`json:"payment_time"`
+}
+
+type BalanceDto struct {
+	Balance int	`json:"balance"`
+	Bills []Bill	`json:"bills"`
+	Payments []Payment	`json:"payments"`
+}

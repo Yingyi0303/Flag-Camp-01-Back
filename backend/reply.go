@@ -14,25 +14,31 @@ func (backend *PostgresBackend) InsertReply(discussionId int, username, content 
 	formattedTime := currentTime.Format("2006-01-02 15:04:05")
 
 	_, err := tx.Exec("UPDATE discussions SET last_update_time = $1 WHERE id = $2", formattedTime, discussionId)
-	if (err != nil) {
-		log.Println(err)
-		return nil, err
-	}
-
-	query := "INSERT INTO replies (username, discussion_id, content, reply_time) VALUES ($1, $2, $3, $4) RETURNING id"
-	var id int
-	err = tx.QueryRow(query, username, discussionId, content, formattedTime).Scan(&id)
 	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
 
+	query := "INSERT INTO replies (username, discussion_id, content, reply_time) VALUES ($1, $2, $3, $4) RETURNING id"
+	var id int64
+	err = tx.QueryRow(query, username, discussionId, content, formattedTime).Scan(&id)
+	if err != nil {
+		log.Println(err)
+		return nil, err
+	}
+	
 	if err := tx.Commit(); err != nil {
 		log.Println(err)
 		return nil, err
 	}
 
-	return backend.SelectReplyById(int(id))
+	result, err := backend.SelectReplyById(int(id))
+	if err != nil {
+		log.Println(err)
+		return nil, err
+	}
+
+	return result, nil
 }
 
 func (backend *PostgresBackend) SelectRepliesByDiscussionId(id int) ([]model.Reply, error) {

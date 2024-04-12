@@ -35,13 +35,21 @@ func InitRouter() http.Handler {
 	router.Handle("/discussion", middleware.Handler(http.HandlerFunc(deleteDiscussionHandler))).Methods("DELETE")
 
 	router.Handle("/reply", middleware.Handler(http.HandlerFunc(postReplyHandler))).Methods("POST")
-	router.Handle("/myreplies", middleware.Handler(http.HandlerFunc(getMyRepliesHandler))).Methods("GET")
+	router.Handle("/reply", middleware.Handler(http.HandlerFunc(getMyRepliesHandler))).Methods("GET")
 	router.Handle("/reply", middleware.Handler(http.HandlerFunc(deleteReplyHandler))).Methods("DELETE")
 
 	router.Handle("/maintenance", middleware.Handler(http.HandlerFunc(postMaintenanceHandler))).Methods("POST")
 	router.Handle("/allmaintenances", middleware.Handler(http.HandlerFunc(getAllMaintenancesHandler))).Methods("GET")
 	router.Handle("/mymaintenances", middleware.Handler(http.HandlerFunc(getMyMaintenancesHandler))).Methods("GET")
 	router.Handle("/maintenance", middleware.Handler(http.HandlerFunc(putMaintenanceHandler))).Methods("PUT")
+
+	router.Handle("/bill", middleware.Handler(http.HandlerFunc(postBillHandler))).Methods("POST")
+	router.Handle("/bill", middleware.Handler(http.HandlerFunc(getMyBillsHandler))).Methods("GET")
+
+	router.Handle("/payment", middleware.Handler(http.HandlerFunc(postPaymentHandler))).Methods("POST")
+	router.Handle("/payment", middleware.Handler(http.HandlerFunc(getMyPaymentsHandler))).Methods("GET")
+
+	router.Handle("/balance", middleware.Handler(http.HandlerFunc(getMyBalanceHandlder))).Methods("GET")
 	
 	originsOk := handlers.AllowedOrigins([]string{"*"})
 	headersOk := handlers.AllowedHeaders([]string{"Authorization", "Content-Type"})

@@ -17,11 +17,11 @@ func postMaintenanceHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"]
+	username := claims.(jwt.MapClaims)["username"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var maintenance model.Maintenance
-	maintenance.Username = username.(string)
+	maintenance.Username = username
 	if err := decoder.Decode(&maintenance); err != nil {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		fmt.Printf("Invalid input %v\n", err)
@@ -29,7 +29,7 @@ func postMaintenanceHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username.(string))
+	success, err := service.ValidateResidentialUser(username)
 	if err != nil {
 		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
 		fmt.Printf("Failed to validate role %v\n", err)
@@ -54,6 +54,7 @@ func postMaintenanceHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, "Failed to add maintenance", http.StatusInternalServerError)
 		fmt.Printf("Failed to add maintenance %v\n", err)
+		return
 	}
 
 	jsonResponse, _ := json.Marshal(result)
@@ -69,11 +70,11 @@ func getAllMaintenancesHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"]
+	username := claims.(jwt.MapClaims)["username"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var maintenance model.Maintenance
-	maintenance.Username = username.(string)
+	maintenance.Username = username
 	if err := decoder.Decode(&maintenance); err != nil {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		fmt.Printf("Invalid input %v\n", err)
@@ -81,7 +82,7 @@ func getAllMaintenancesHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateThirdPartyUser(username.(string))
+	success, err := service.ValidateThirdPartyUser(username)
 	if err != nil {
 		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
 		fmt.Printf("Failed to validate role %v\n", err)
@@ -114,11 +115,11 @@ func getMyMaintenancesHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"]
+	username := claims.(jwt.MapClaims)["username"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var maintenance model.Maintenance
-	maintenance.Username = username.(string)
+	maintenance.Username = username
 	if err := decoder.Decode(&maintenance); err != nil {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		fmt.Printf("Invalid input %v\n", err)
@@ -126,7 +127,7 @@ func getMyMaintenancesHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username.(string))
+	success, err := service.ValidateResidentialUser(username)
 	if err != nil {
 		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
 		fmt.Printf("Failed to validate role %v\n", err)
@@ -159,11 +160,11 @@ func putMaintenanceHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"]
+	username := claims.(jwt.MapClaims)["username"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var maintenance model.Maintenance
-	maintenance.Username = username.(string)
+	maintenance.Username = username
 	if err := decoder.Decode(&maintenance); err != nil {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		fmt.Printf("Invalid input %v\n", err)
@@ -171,7 +172,7 @@ func putMaintenanceHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateThirdPartyUser(username.(string))
+	success, err := service.ValidateThirdPartyUser(username)
 	if err != nil {
 		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
 		fmt.Printf("Failed to validate role %v\n", err)
@@ -194,9 +195,9 @@ func putMaintenanceHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	if result == nil {
 		w.Write([]byte("{}"))
-	} else {
-		jsonResponse, _ := json.Marshal(result)
-		w.Write(jsonResponse)
+		return
 	}
+	jsonResponse, _ := json.Marshal(result)
+	w.Write(jsonResponse)
 	fmt.Printf("Handler put maintenance: %d\n", maintenance.Id)	
 }

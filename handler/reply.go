@@ -17,11 +17,11 @@ func postReplyHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"]
+	username := claims.(jwt.MapClaims)["username"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var reply model.Reply
-	reply.Username = username.(string)
+	reply.Username = username
 	if err := decoder.Decode(&reply); err != nil {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		fmt.Printf("Invalid input %v\n", err)
@@ -29,7 +29,7 @@ func postReplyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username.(string))
+	success, err := service.ValidateResidentialUser(username)
 	if err != nil {
 		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
 		fmt.Printf("Failed to validate role %v\n", err)
@@ -50,16 +50,17 @@ func postReplyHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, "Failed to add reply", http.StatusInternalServerError)
 		fmt.Printf("Failed to add reply %v\n", err)
+		return
 	}
 
 	w.WriteHeader(http.StatusOK)
 	if result == nil {
 		w.Write([]byte("{}"))
-	} else {
-		jsonResponse, _ := json.Marshal(result)
-		w.Write(jsonResponse)
-		fmt.Printf("Handler post reply: %d\n", reply.DiscussionId)
+		return
 	}
+	jsonResponse, _ := json.Marshal(result)
+	w.Write(jsonResponse)
+	fmt.Printf("Handler post reply: %d\n", reply.DiscussionId)
 }
 
 func getMyRepliesHandler(w http.ResponseWriter, r *http.Request) {
@@ -69,10 +70,10 @@ func getMyRepliesHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"]
+	username := claims.(jwt.MapClaims)["username"].(string)
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username.(string))
+	success, err := service.ValidateResidentialUser(username)
 	if err != nil {
 		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
 		fmt.Printf("Failed to validate role %v\n", err)
@@ -85,7 +86,7 @@ func getMyRepliesHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// process request
-	result, err := service.GetMyReplies(username.(string))
+	result, err := service.GetMyReplies(username)
 	if err != nil {
 		http.Error(w, "Failed to get my replies", http.StatusInternalServerError)
 		fmt.Printf("Failed to get my replies %v\n", err)
@@ -93,12 +94,8 @@ func getMyRepliesHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	if len(result) == 0 {
-		w.Write([]byte("[]"))
-	} else {
-		jsonResponse, _ := json.Marshal(result)
-		w.Write(jsonResponse)
-	}
+	jsonResponse, _ := json.Marshal(result)
+	w.Write(jsonResponse)
 	fmt.Printf("Handler get my replies\n")
 }
 
@@ -109,7 +106,7 @@ func deleteReplyHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"]
+	username := claims.(jwt.MapClaims)["username"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var reply model.Reply
@@ -120,7 +117,7 @@ func deleteReplyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username.(string))
+	success, err := service.ValidateResidentialUser(username)
 	if err != nil {
 		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
 		fmt.Printf("Failed to validate role %v\n", err)
@@ -133,7 +130,7 @@ func deleteReplyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// process request
-	err = service.RemoveReply(username.(string), reply.Id)
+	err = service.RemoveReply(username, reply.Id)
 	if err != nil {
 		http.Error(w, "Failed to remove reply", http.StatusInternalServerError)
 		fmt.Printf("Failed to remove reply %v\n", err)

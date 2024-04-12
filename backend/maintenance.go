@@ -16,7 +16,7 @@ func (backend *PostgresBackend) InsertMaintenance(username, subject, content str
 	currentTime := time.Now()
 	formattedTime := currentTime.Format("2006-01-02 15:04:05")
 
-	var id int
+	var id int64
 	err := tx.QueryRow(query, username, subject, content, formattedTime).Scan(&id)
 	if err != nil {
 		log.Println(err)
@@ -28,7 +28,13 @@ func (backend *PostgresBackend) InsertMaintenance(username, subject, content str
 		return nil, err
 	}
 
-	return backend.SelectMaintenanceById(int(id))
+	result, err := backend.SelectMaintenanceById(int(id))
+	if err != nil {
+		log.Println(err)
+		return nil, err
+	}
+	
+	return result, nil
 }
 
 func (backend *PostgresBackend) SelectAllMaintenances(completed bool) ([]model.Maintenance, error) {
@@ -101,7 +107,7 @@ func (backend *PostgresBackend) UpdateMaintenanceById(id int, reply string, comp
 	
 	var isCompleted bool
 	err := tx.QueryRow("SELECT completed from maintenances WHERE id = $1 FOR UPDATE", id).Scan(&isCompleted)
-	if (err != nil) {
+	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
@@ -123,13 +129,19 @@ func (backend *PostgresBackend) UpdateMaintenanceById(id int, reply string, comp
 		log.Println(err)
 		return nil, err
 	}
-
+	
 	if err := tx.Commit(); err != nil {
 		log.Println(err)
 		return nil, err
 	}
 
-	return backend.SelectMaintenanceById(int(id))
+	result, err := backend.SelectMaintenanceById(id)
+	if err != nil {
+		log.Println(err)
+		return nil, err
+	}
+
+	return result, nil
 }
 
 func (backend *PostgresBackend) SelectMaintenanceById(id int) (*model.Maintenance, error) {

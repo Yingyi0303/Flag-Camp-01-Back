@@ -8,13 +8,13 @@ import (
 )
 
 func AddDiscussion(discussion *model.Discussion) (*model.Discussion, error) {
-	discussion, err := backend.PGBackend.InsertDiscussion(discussion.Username, discussion.Subject, discussion.Content)
+	result, err := backend.PGBackend.InsertDiscussion(discussion.Username, discussion.Subject, discussion.Content)
 	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
-	fmt.Printf("Service added discussion: %d\n", discussion.Id)
-	return discussion, nil
+	fmt.Printf("Service added discussion: %d\n", result.Id)
+	return result, nil
 }
 
 func GetAllDiscussions() ([]model.Discussion, error) {

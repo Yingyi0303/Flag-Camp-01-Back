@@ -119,6 +119,34 @@
 			"response": []
 		},
 		{
+			"name": "Third Party Signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"chase\",\n    \"password\": \"secret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Test authentication",
 			"request": {
 				"auth": {
@@ -126,7 +154,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -155,7 +183,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -164,7 +192,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"topic\": \"this is a discussion from amy\",\n    \"content\": \"this is a content from amy\"\n}",
+					"raw": "{\n    \"subject\": \"this is a subject from amy\",\n    \"content\": \"this is a content from amy\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -193,7 +221,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -222,7 +250,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -254,7 +282,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -292,7 +320,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -330,7 +358,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -338,14 +366,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/myreplies",
+					"raw": "http://localhost:8080/reply",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"myreplies"
+						"reply"
 					]
 				}
 			},
@@ -359,7 +387,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -397,7 +425,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI4ODI4OTcsInVzZXJuYW1lIjoiYW15In0.tFoBXE9kR7jMiUFbdFeKEvAo6I5wJgaSDVKjaTu5Pto",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
 							"type": "string"
 						}
 					]
@@ -422,6 +450,363 @@
 					"port": "8080",
 					"path": [
 						"discussion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Maintenance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subject\": \"this is a subject from amy\",\n    \"content\": \"this is a content from amy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/maintenance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"maintenance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Maintenances",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"completed\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/allmaintenances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"allmaintenances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Maintenances",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"completed\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mymaintenances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mymaintenances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Maintenance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc4OTksInVzZXJuYW1lIjoiY2hhc2UifQ.k0vmFHmGsxZa_Kgu92rdGCzLhtsqUpK5sj2ffarylII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"reply\": \"this is a reply from chase\",\n    \"completed\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/maintenance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"maintenance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Bill",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc4OTksInVzZXJuYW1lIjoiY2hhc2UifQ.k0vmFHmGsxZa_Kgu92rdGCzLhtsqUpK5sj2ffarylII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"amy\",\n    \"maintenance_id\": 1,\n    \"item\": \"this is an item from chase\",\n    \"amount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bill",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Bills",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bill",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"item\": \"this is an item from amy\",\n    \"amount\": 8\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Payments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payment"
 					]
 				}
 			},

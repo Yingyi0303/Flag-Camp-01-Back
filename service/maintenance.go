@@ -8,13 +8,13 @@ import (
 )
 
 func AddMaintenance(maintenance *model.Maintenance) (*model.Maintenance, error) {
-	maintenance, err := backend.PGBackend.InsertMaintenance(maintenance.Username, maintenance.Subject, maintenance.Content)
+	result, err := backend.PGBackend.InsertMaintenance(maintenance.Username, maintenance.Subject, maintenance.Content)
 	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
-	fmt.Printf("Service added maintenance: %d\n", maintenance.Id)
-	return maintenance, nil
+	fmt.Printf("Service added maintenance: %d\n", result.Id)
+	return result, nil
 }
 
 func GetAllMaintenances(completed bool) ([]model.Maintenance, error) {
@@ -54,6 +54,6 @@ func SetMaintenance(maintenance *model.Maintenance) (*model.Maintenance, error) 
 	if result == nil {
 		return nil, nil
 	}
-	fmt.Printf("Service set maintenance: %d\n", maintenance.Id)
+	fmt.Printf("Service set maintenance: %d\n", result.Id)
 	return result, nil
 }
