@@ -154,7 +154,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -183,7 +183,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -221,7 +221,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -250,7 +250,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -272,47 +272,6 @@
 			"response": []
 		},
 		{
-			"name": "Get Discussion Details",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"id\": 1\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/discussion",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"discussion"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Post Reply",
 			"request": {
 				"auth": {
@@ -320,7 +279,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -358,7 +317,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -380,6 +339,47 @@
 			"response": []
 		},
 		{
+			"name": "Get Discussion Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/discussion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"discussion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Delete Reply",
 			"request": {
 				"auth": {
@@ -387,7 +387,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -425,7 +425,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -463,7 +463,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -494,47 +494,6 @@
 			"response": []
 		},
 		{
-			"name": "Get All Maintenances",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"completed\": false\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/allmaintenances",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"allmaintenances"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get My Maintenances",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -545,7 +504,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -583,7 +542,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc4OTksInVzZXJuYW1lIjoiY2hhc2UifQ.k0vmFHmGsxZa_Kgu92rdGCzLhtsqUpK5sj2ffarylII",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwNDAsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.R0hLT03bS_YHa5kAewRzlWuj2E7f4ysb6JIZxEOP5ks",
 							"type": "string"
 						}
 					]
@@ -614,6 +573,47 @@
 			"response": []
 		},
 		{
+			"name": "Get All Maintenances",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwNDAsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.R0hLT03bS_YHa5kAewRzlWuj2E7f4ysb6JIZxEOP5ks",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"completed\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/allmaintenances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"allmaintenances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Post Bill",
 			"request": {
 				"auth": {
@@ -621,7 +621,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc4OTksInVzZXJuYW1lIjoiY2hhc2UifQ.k0vmFHmGsxZa_Kgu92rdGCzLhtsqUpK5sj2ffarylII",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwNDAsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.R0hLT03bS_YHa5kAewRzlWuj2E7f4ysb6JIZxEOP5ks",
 							"type": "string"
 						}
 					]
@@ -662,7 +662,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -693,47 +693,6 @@
 			"response": []
 		},
 		{
-			"name": "Get My Balance",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/balance",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"balance"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Post Payment",
 			"request": {
 				"auth": {
@@ -741,7 +700,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -782,7 +741,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTI5Njc3NjQsInVzZXJuYW1lIjoiYW15In0.heXBWcXTBe8XYqMlIA_gb0f1XxIwAPd2bW95ov_b_vM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
 							"type": "string"
 						}
 					]
@@ -807,6 +766,47 @@
 					"port": "8080",
 					"path": [
 						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"balance"
 					]
 				}
 			},

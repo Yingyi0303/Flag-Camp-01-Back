@@ -23,7 +23,7 @@ func GetAllDiscussions() ([]model.Discussion, error) {
 		log.Println(err)
 		return nil, err
 	}
-	fmt.Printf("Service fetched all discussions\n")
+	fmt.Println("Service fetched all discussions")
 	return discussions, nil
 }
 

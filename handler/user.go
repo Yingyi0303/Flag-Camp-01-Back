@@ -71,23 +71,24 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.CheckUser(&user)
+	result, err := service.CheckUser(&user)
 	if err != nil {
 		http.Error(w, "Failed to check user", http.StatusInternalServerError)
 		fmt.Printf("Failed to check user %v\n", err)
 		return
 	}
 
-	if !success {
+	if result == nil {
 		http.Error(w, "Wrong username or password", http.StatusUnauthorized)
-		fmt.Printf("Wrong username or password\n")
+		fmt.Println("Wrong username or password")
 		return
 	}
 
 	// process request
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"username": user.Username,
-		"exp": 		time.Now().Add(time.Hour * 24).Unix(),
+		"username":	result.Username,
+		"role":	result.Role,
+		"exp":	time.Now().Add(time.Hour * 24).Unix(),
 	})
 
 	tokenString, err := token.SignedString(signingKey)
@@ -98,6 +99,14 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// construct response
-	w.Write([]byte(tokenString))
+	respone := model.Response {
+		Username: result.Username,
+		Role: result.Role,
+		Token: tokenString,
+	}
+
+	w.WriteHeader(http.StatusOK)
+	jsonResponse, _ := json.Marshal(respone)
+	w.Write(jsonResponse)
 	fmt.Printf("Handler sign in user: %s\n", user.Username)
 }

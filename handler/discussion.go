@@ -18,6 +18,7 @@ func postDiscussionHandler(w http.ResponseWriter, r *http.Request) {
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
 	username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var discussion model.Discussion
@@ -29,15 +30,9 @@ func postDiscussionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 	if discussion.Subject == "" {
@@ -69,18 +64,13 @@ func getAllDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"].(string)
+	// username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 
@@ -95,7 +85,7 @@ func getAllDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 	jsonResponse, _ := json.Marshal(result)
 	w.WriteHeader(http.StatusOK)
 	w.Write(jsonResponse)
-	fmt.Printf("Handler get all discussions\n")
+	fmt.Println("Handler get all discussions")
 }
 
 func getMyDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
@@ -106,17 +96,12 @@ func getMyDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
 	username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 
@@ -131,7 +116,7 @@ func getMyDiscussionsHandler(w http.ResponseWriter, r *http.Request) {
 	jsonResponse, _ := json.Marshal(result)
 	w.WriteHeader(http.StatusOK)
 	w.Write(jsonResponse)
-	fmt.Printf("Handler get my discussions\n")
+	fmt.Println("Handler get my discussions")
 }
 
 func getDiscussionDetailHandler(w http.ResponseWriter, r *http.Request) {
@@ -141,7 +126,8 @@ func getDiscussionDetailHandler(w http.ResponseWriter, r *http.Request) {
 	// parse request
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
-	username := claims.(jwt.MapClaims)["username"].(string)
+	// username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var discussion model.Discussion
@@ -152,15 +138,9 @@ func getDiscussionDetailHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 
@@ -190,6 +170,7 @@ func deleteDiscussionHandler(w http.ResponseWriter, r *http.Request) {
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
 	username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var discussion model.Discussion
@@ -200,20 +181,14 @@ func deleteDiscussionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 
 	// process request
-	err = service.RemoveDiscussion(username, discussion.Id)
+	err := service.RemoveDiscussion(username, discussion.Id)
 	if err != nil {
 		http.Error(w, "Failed to remove discussion", http.StatusInternalServerError)
 		fmt.Printf("Failed to remove discussion %v\n", err)

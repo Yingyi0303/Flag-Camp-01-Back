@@ -1,5 +1,11 @@
 package model
 
+type Response struct {
+	Username string	`json:"username"`
+	Role string	`json:"role"`
+	Token string	`json:"token"`
+}
+
 type User struct {
 	Id int	`json:"id"`
 	Username string	`json:"username"`

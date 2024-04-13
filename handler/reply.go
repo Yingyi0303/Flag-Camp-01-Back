@@ -18,6 +18,7 @@ func postReplyHandler(w http.ResponseWriter, r *http.Request) {
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
 	username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var reply model.Reply
@@ -29,15 +30,9 @@ func postReplyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 	if reply.Content == "" {
@@ -71,17 +66,12 @@ func getMyRepliesHandler(w http.ResponseWriter, r *http.Request) {
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
 	username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 
@@ -107,6 +97,7 @@ func deleteReplyHandler(w http.ResponseWriter, r *http.Request) {
 	token := r.Context().Value("user")
 	claims := token.(*jwt.Token).Claims
 	username := claims.(jwt.MapClaims)["username"].(string)
+	role := claims.(jwt.MapClaims)["role"].(string)
 
 	decoder := json.NewDecoder(r.Body)
 	var reply model.Reply
@@ -117,20 +108,14 @@ func deleteReplyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// validate request
-	success, err := service.ValidateResidentialUser(username)
-	if err != nil {
-		http.Error(w, "Failed to validate role", http.StatusInternalServerError)
-		fmt.Printf("Failed to validate role %v\n", err)
-		return
-	}
-	if !success {
+	if role != "resident" && role != "manager" {
 		http.Error(w, "User unauthorized", http.StatusUnauthorized)
-		fmt.Printf("User unauthorized %v\n", err)
+		fmt.Println("User unauthorized")
 		return
 	}
 
 	// process request
-	err = service.RemoveReply(username, reply.Id)
+	err := service.RemoveReply(username, reply.Id)
 	if err != nil {
 		http.Error(w, "Failed to remove reply", http.StatusInternalServerError)
 		fmt.Printf("Failed to remove reply %v\n", err)

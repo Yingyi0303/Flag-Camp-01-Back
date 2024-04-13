@@ -2,6 +2,7 @@ package backend
 
 import (
 	"log"
+	"propertyManagement/model"
 )
 
 func (backend *PostgresBackend) InsertUser(username, password, role string) error {
@@ -32,22 +33,12 @@ func (backend *PostgresBackend) UserExists(username string) (bool, error) {
 	return count > 0, nil
 }
 
-func (backend *PostgresBackend) ValidateUser(username, password string) (bool, error) {
-	var count int
-	err := backend.db.QueryRow("SELECT COUNT(*) FROM users WHERE username = $1 AND password = $2", username, password).Scan(&count)
+func (backend *PostgresBackend) ValidateUser(username, password string) (*model.User, error) {
+	var user model.User
+	err := backend.db.QueryRow("SELECT username, role FROM users WHERE username = $1 AND password = $2", username, password).Scan(&user.Username, &user.Role)
 	if err != nil {
 		log.Println(err)
-		return false, err
+		return nil, err
 	}
-	return count > 0, nil
-}
-
-func (backend *PostgresBackend) ValidateRole(username string) (string, error) {
-	var role string
-	err := backend.db.QueryRow("SELECT role FROM users WHERE username = $1", username).Scan(&role)
-	if err != nil {
-		log.Println(err)
-		return "", err
-	}
-	return role, nil
+	return &user, nil
 }
