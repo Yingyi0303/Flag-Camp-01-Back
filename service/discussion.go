@@ -65,15 +65,7 @@ func GetDiscussionDetails(id int) (*model.DiscussionDto, error) {
 }
 
 func RemoveDiscussion(username string, id int) error {
-	success, err := backend.PGBackend.DiscussionExists(id)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-	if !success {
-		return nil
-	}
-	err = backend.PGBackend.DeleteDiscussion(username, id)
+	err := backend.PGBackend.DeleteDiscussion(username, id)
 	if err != nil {
 		log.Println(err)
 		return err

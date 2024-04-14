@@ -51,6 +51,15 @@ func InitRouter() http.Handler {
 
 	router.Handle("/balance", middleware.Handler(http.HandlerFunc(getMyBalanceHandlder))).Methods("GET")
 	
+	router.Handle("/reservation", middleware.Handler(http.HandlerFunc(postReservationHandler))).Methods("POST")
+	router.Handle("/myreservations", middleware.Handler(http.HandlerFunc(getMyReservationsHandler))).Methods("GET")
+	router.Handle("/reservation", middleware.Handler(http.HandlerFunc(deleteReservationHandler))).Methods("DELETE")
+
+	router.Handle("/facility", middleware.Handler(http.HandlerFunc(getAllFacilitiesHandler))).Methods("GET")
+	router.Handle("/facilityreservations", middleware.Handler(http.HandlerFunc(getFacilityReservationsHandler))).Methods("GET")
+
+	router.Handle("/calendar", middleware.Handler(http.HandlerFunc(getCalendarHandler))).Methods("GET")
+	
 	originsOk := handlers.AllowedOrigins([]string{"*"})
 	headersOk := handlers.AllowedHeaders([]string{"Authorization", "Content-Type"})
 	methodsOk := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"})

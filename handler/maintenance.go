@@ -36,7 +36,7 @@ func postMaintenanceHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if maintenance.Subject == "" {
-		http.Error(w, "Invalid title", http.StatusBadRequest)
+		http.Error(w, "Invalid subject", http.StatusBadRequest)
 		return
 	}
 	if maintenance.Content == "" {

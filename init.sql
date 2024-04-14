@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS reservations;
+DROP TABLE IF EXISTS facilities;
 DROP TRIGGER IF EXISTS update_bill_trigger ON bills;
 DROP TRIGGER IF EXISTS update_payment_trigger ON payments;
 DROP TABLE IF EXISTS balances;
@@ -88,3 +90,23 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 CREATE TRIGGER insert_payment_trigger AFTER INSERT ON payments FOR EACH ROW EXECUTE FUNCTION insert_payment();
+CREATE TABLE facilities (
+    id SERIAL PRIMARY KEY NOT NULL,
+    facility_name TEXT UNIQUE NOT NULL,
+    description TEXT NOT NULL
+);
+CREATE TABLE reservations (
+    id SERIAL PRIMARY KEY NOT NULL,
+    username TEXT REFERENCES users(username) ON DELETE CASCADE,
+    facility_name TEXT REFERENCES facilities(facility_name) ON DELETE CASCADE,
+    remark TEXT NOT NULL,
+    reservation_date DATE NOT NULL,
+    start_hour INTEGER NOT NULL,
+    end_hour INTEGER NOT NULL,
+    CHECK (start_hour >= 0 AND start_hour <= 24),
+    CHECK (end_hour >= 0 AND end_hour <= 24 AND end_hour - start_hour >= 1 AND end_hour - start_hour <= 4)
+);
+INSERT INTO facilities (facility_name, description) VALUES
+('tennis court', 'this is a tennis court'),
+('swimming pool', 'this is a swimming pool'),
+('billard room', 'this is a billard room');

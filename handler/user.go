@@ -99,7 +99,7 @@ func signinHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// construct response
-	respone := model.Response {
+	respone := model.SigninResponse {
 		Username: result.Username,
 		Role: result.Role,
 		Token: tokenString,

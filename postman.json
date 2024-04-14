@@ -154,7 +154,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -183,7 +183,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -221,7 +221,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -250,7 +250,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -279,7 +279,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -317,7 +317,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -349,7 +349,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -387,7 +387,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -425,7 +425,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -463,7 +463,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -504,7 +504,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -542,7 +542,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwNDAsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.R0hLT03bS_YHa5kAewRzlWuj2E7f4ysb6JIZxEOP5ks",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODcsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.BNtjU0mYCoFeeExhBxn6oGdntZuD7qH5QB-P4Dj1fOo",
 							"type": "string"
 						}
 					]
@@ -583,7 +583,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwNDAsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.R0hLT03bS_YHa5kAewRzlWuj2E7f4ysb6JIZxEOP5ks",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODcsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.BNtjU0mYCoFeeExhBxn6oGdntZuD7qH5QB-P4Dj1fOo",
 							"type": "string"
 						}
 					]
@@ -621,7 +621,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwNDAsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.R0hLT03bS_YHa5kAewRzlWuj2E7f4ysb6JIZxEOP5ks",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODcsInJvbGUiOiJ0aGlyZF9wYXJ0eSIsInVzZXJuYW1lIjoiY2hhc2UifQ.BNtjU0mYCoFeeExhBxn6oGdntZuD7qH5QB-P4Dj1fOo",
 							"type": "string"
 						}
 					]
@@ -662,7 +662,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -700,7 +700,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -741,7 +741,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -782,7 +782,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMwODMwMjgsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.YtklKeIcMgg9UMXM7NH2x89o2alA4Rt2_o6ziFqL7kU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
 							"type": "string"
 						}
 					]
@@ -807,6 +807,210 @@
 					"port": "8080",
 					"path": [
 						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Reservation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"facility_name\": \"tennis court\",\n    \"remark\": \"this is a reservation from amy\",\n    \"reservation_date\": \"2024-04-20\",\n    \"start_hour\": 10,\n    \"end_hour\": 12\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Reservations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/myreservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"myreservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Reservation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Facilities",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/facility",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"facility"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Facility Reservations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"facility_name\": \"tennis court\",\n    \"start_date\": \"2024-04-19\",\n    \"end_date\": \"2024-04-21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/facilityreservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"facilityreservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Calendar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTMxNzIwODEsInJvbGUiOiJyZXNpZGVudCIsInVzZXJuYW1lIjoiYW15In0.We0kupbqQu0KvK6fxABnwO-lc_Jlb5VwgDqvYgPrKcc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calendar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calendar"
 					]
 				}
 			},

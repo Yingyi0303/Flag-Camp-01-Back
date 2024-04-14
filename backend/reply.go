@@ -71,8 +71,7 @@ func (backend *PostgresBackend) SelectRepliesByDiscussionId(id int) ([]model.Rep
 }
 
 func (backend *PostgresBackend) SelectAllRepliesByUsername(username string) ([]model.Reply, error) {
-	query := "SELECT id, username, discussion_id, content, TO_CHAR(reply_time, 'YYYY-MM-DD HH24:MI:SS') FROM replies WHERE username = $1 ORDER BY reply_time DESC"
-	rows, err := backend.db.Query(query, username)
+	rows, err := backend.db.Query("SELECT id, username, discussion_id, content, TO_CHAR(reply_time, 'YYYY-MM-DD HH24:MI:SS') FROM replies WHERE username = $1 ORDER BY reply_time DESC", username)
     if err != nil {
 		log.Println(err)
         return nil, err
@@ -119,9 +118,7 @@ func (backend *PostgresBackend) DeleteReply(username string, id int) error {
 	tx, _ := backend.db.Begin()
 	defer tx.Rollback()
 
-	query := "DELETE FROM replies WHERE username = $1 AND id = $2"
-
-	_, err := tx.Exec(query, username, id)
+	_, err := tx.Exec("DELETE FROM replies WHERE username = $1 AND id = $2", username, id)
 	if err != nil {
 		log.Println(err)
 		return err

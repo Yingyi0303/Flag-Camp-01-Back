@@ -67,8 +67,7 @@ func (backend *PostgresBackend) SelectAllDiscussions() ([]model.Discussion, erro
 }
 
 func (backend *PostgresBackend) SelectAllDiscussionsByUsername(username string) ([]model.Discussion, error) {
-	query := "SELECT id, username, subject, content, TO_CHAR(last_update_time, 'YYYY-MM-DD HH24:MI:SS') FROM discussions WHERE username = $1 ORDER BY last_update_time DESC"
-	rows, err := backend.db.Query(query, username)
+	rows, err := backend.db.Query("SELECT id, username, subject, content, TO_CHAR(last_update_time, 'YYYY-MM-DD HH24:MI:SS') FROM discussions WHERE username = $1 ORDER BY last_update_time DESC", username)
     if err != nil {
 		log.Println(err)
         return nil, err
@@ -116,9 +115,7 @@ func (backend *PostgresBackend) DeleteDiscussion(username string, id int) error 
 	tx, _ := backend.db.Begin()
 	defer tx.Rollback()
 	
-	query := "DELETE FROM discussions WHERE username = $1 AND id = $2"
-
-	_, err := tx.Exec(query, username, id)
+	_, err := tx.Exec("DELETE FROM discussions WHERE username = $1 AND id = $2", username, id)
 	if err != nil {
 		log.Println(err)
 		return err

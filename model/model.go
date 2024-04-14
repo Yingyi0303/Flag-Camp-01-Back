@@ -1,6 +1,6 @@
 package model
 
-type Response struct {
+type SigninResponse struct {
 	Username string	`json:"username"`
 	Role string	`json:"role"`
 	Token string	`json:"token"`
@@ -65,4 +65,26 @@ type BalanceDto struct {
 	Balance int	`json:"balance"`
 	Bills []Bill	`json:"bills"`
 	Payments []Payment	`json:"payments"`
+}
+
+type Facility struct {
+	Id int	`json:"id"`
+	FacilityName string	`json:"facility_name"`
+	Description string	`json:"description"`
+}
+
+type Reservation struct {
+	Id int	`json:"id"`
+	Username string	`json:"username"`
+	FacilityName string	`json:"facility_name"`
+	Remark string	`json:"remark"`
+	ReservationDate string	`json:"reservation_date"`
+	StartHour int	`json:"start_hour"`
+	EndHour int	`json:"end_hour"`
+}
+
+type ReservationRequest struct {
+	FacilityName string	`json:"facility_name"`
+	StartDate string	`json:"start_date"`
+	EndDate string	`json:"end_date"`
 }
